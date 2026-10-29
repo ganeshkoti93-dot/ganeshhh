@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apple Mobiles - Best Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #062653;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ffd21c;
+        }
+
+        .search {
+            flex: 1;
+            display: flex;
+            max-width: 600px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search button {
+            background: #ffd21c;
+            border: none;
+            padding: 0 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .header-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-link:hover {
+            color: #ffd21c;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: white;
+            padding: 14px 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #17233c;
+            margin-right: 30px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e5b900;
+        }
+
+        /* TITLE */
+
+        .page-title {
+            text-align: center;
+            padding: 35px 20px 25px;
+        }
+
+        .page-title h1 {
+            font-size: 30px;
+        }
+
+        .page-title p {
+            margin-top: 8px;
+            color: #666;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        /* IMAGE - CORRECTED ONLY */
+
+        .product img {
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 12px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .brand {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: #e5b900;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 10px 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .details {
+            background: #17233c;
+            color: white;
+            border: none;
+        }
+
+        .cart-btn {
+            background: #ffd21c;
+            color: #17233c;
+            border: none;
+        }
+
+        /* DETAILS */
+
+        .details-box {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            background: #f1f5fa;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .details-box strong {
+            color: #062653;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 50px;
+            background: #062653;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                gap: 15px;
+            }
+
+            nav a {
+                margin-right: 15px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        BEST <span>MOBILES</span>
+    </div>
+
+    <div class="search">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search mobiles, brands and models">
+
+        <button onclick="searchMobile()">Search</button>
+
+    </div>
+
+    <a href="login.html" class="header-link">Login</a>
+
+    <a href="cart.html" class="header-link">🛒 Cart</a>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="mo.html">Mobiles</a>
+
+    <a href="offers.html">Offers</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+
+<!-- TITLE -->
+
+<section class="page-title">
+
+    <h1>Apple Mobiles</h1>
+
+    <p>Explore the latest Apple iPhones</p>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products">
+
+
+    <!-- iPHONE 18 pro -->
+
+    <div class="product">
+
+        <img src="in1.jpeg" alt="iPhone 18pro">
+
+        <h3>iPhone 18pro</h3>
+
+        <p class="brand">Apple</p>
+
+        <p class="rating">★ 4.8</p>
+
+        <p class="price">₹1,64,900</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details1')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart('iPhone 16','Apple',69999,'in1.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details1" class="details-box">
+
+            <strong>Display:</strong> 6.1 inch<br>
+            <strong>Processor:</strong> Apple A18<br>
+            <strong>Camera:</strong> 48MP + 12MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Battery:</strong> All-day battery<br>
+            <strong>Price:</strong> ₹1,64,900
+
+        </div>
+
+    </div>
+
+
+    <!-- iPHONE 16 PLUS -->
+
+    <div class="product">
+
+        <img src="ip6.jpeg" alt="iPhone 16 Plus">
+
+        <h3>iPhone 16 Plus</h3>
+
+        <p class="brand">Apple</p>
+
+        <p class="rating">★ 4.7</p>
+
+        <p class="price">₹79,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details2')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart('iPhone 16 Plus','Apple',79999,'ip6.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details2" class="details-box">
+
+            <strong>Display:</strong> 6.7 inch<br>
+            <strong>Processor:</strong> Apple A18<br>
+            <strong>Camera:</strong> 48MP + 12MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Battery:</strong> Long-lasting battery<br>
+            <strong>Price:</strong> ₹79,999
+
+        </div>
+
+    </div>
+
+
+    <!-- iPHONE 16 PRO -->
+
+    <div class="product">
+
+        <img src="ip2.jpeg" alt="iPhone 16 Pro">
+
+        <h3>iPhone 16 Pro</h3>
+
+        <p class="brand">Apple</p>
+
+        <p class="rating">★ 4.9</p>
+
+        <p class="price">₹99,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details3')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart('iPhone 16 Pro','Apple',99999,'ip2.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details3" class="details-box">
+
+            <strong>Display:</strong> 6.3 inch<br>
+            <strong>Processor:</strong> Apple A18 Pro<br>
+            <strong>Camera:</strong> 48MP + 48MP + 12MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Material:</strong> Titanium design<br>
+            <strong>Price:</strong> ₹99,999
+
+        </div>
+
+    </div>
+
+
+    <!-- iPHONE 17 -->
+
+    <div class="product">
+
+        <img src="ip3.jpeg" alt="iPhone 17">
+
+        <h3>iPhone 17</h3>
+
+        <p class="brand">Apple</p>
+
+        <p class="rating">★ 4.9</p>
+
+        <p class="price">₹99,900
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details4')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart('iPhone 17','Apple',99900.ip3.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details4" class="details-box">
+
+            <strong>Display:</strong> 6.3 inch<br>
+            <strong>Processor:</strong> Apple A18 Pro<br>
+            <strong>Camera:</strong> 48MP <br>
+            <strong>Storage:</strong> 256GB<br>
+            <strong>Material:</strong> Titanium design<br>
+            <strong>Price:</strong> ₹99,900
+
+        </div>
+
+    </div>
+
+
+    <!-- iPHONE 15 -->
+
+    <div class="product">
+
+        <img src="ip5.jpeg" alt="iPhone 15">
+
+        <h3>iPhone 15</h3>
+
+        <p class="brand">Apple</p>
+
+        <p class="rating">★ 4.7</p>
+
+        <p class="price">₹59,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details5')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart('iPhone 15','Apple',59999,'ip5.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details5" class="details-box">
+
+            <strong>Display:</strong> 6.1 inch<br>
+            <strong>Processor:</strong> Apple A16 Bionic<br>
+            <strong>Camera:</strong> 48MP + 12MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Charging:</strong> USB-C<br>
+            <strong>Price:</strong> ₹59,999
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 Best Mobiles. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+function showDetails(id) {
+
+    let box = document.getElementById(id);
+
+    if (box.style.display === "block") {
+
+        box.style.display = "none";
+
+    } else {
+
+        box.style.display = "block";
+
+    }
+
+}
+
+
+function addToCart(name, brand, price, image) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+
+        return item.name === name;
+
+    });
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+            brand: brand,
+            price: price,
+            image: image,
+            quantity: 1
+
+        });
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+
+}
+
+
+function searchMobile() {
+
+    let search = document
+        .getElementById("searchInput")
+        .value
+        .trim();
+
+    if (search === "") {
+
+        alert("Please enter a mobile or brand name");
+
+        return;
+
+    }
+
+    window.location.href =
+        "mo.html?search=" + encodeURIComponent(search);
+
+}
+
+</script>
+
+
+</body>
+</html>

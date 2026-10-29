@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Mobiles | Best Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+        }
+
+        header {
+            background: #062653;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffd21c;
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #ddd;
+            margin-top: 3px;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-box button {
+            background: #ffd21c;
+            color: #17233c;
+            border: none;
+            padding: 0 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .search-box button:hover {
+            background: #e4b900;
+        }
+
+        .top-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .top-links a:hover {
+            color: #ffd21c;
+        }
+
+        nav {
+            background: white;
+            padding: 13px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: #062653;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 18px;
+        }
+
+        nav a:hover {
+            color: #d9a900;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 30px 10px 20px;
+        }
+
+        .page-title h1 {
+            color: #062653;
+            font-size: 32px;
+        }
+
+        .page-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .products {
+            width: 92%;
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            padding-bottom: 50px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+
+        .product-image-box {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 10px;
+        }
+
+        .product-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .brand {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .product h2 {
+            color: #062653;
+            font-size: 19px;
+            min-height: 45px;
+        }
+
+        .price {
+            color: #d29b00;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .details-btn,
+        .cart-btn {
+            border: none;
+            padding: 10px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .details-btn {
+            background: #062653;
+            color: white;
+        }
+
+        .details-btn:hover {
+            background: #0b3978;
+        }
+
+        .cart-btn {
+            background: #ffd21c;
+            color: #17233c;
+        }
+
+        .cart-btn:hover {
+            background: #e4b900;
+        }
+
+        .details {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            background: #f1f4f8;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        #noResult {
+            display: none;
+            text-align: center;
+            color: #d33;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px;
+        }
+
+        footer {
+            background: #062653;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #ffd21c;
+        }
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .top-links a {
+                margin: 0 8px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px 8px;
+            }
+
+            .products {
+                width: 94%;
+                grid-template-columns: 1fr;
+            }
+
+            .product-image-box {
+                height: 230px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div>
+
+            <div class="logo">
+                Best <span>Mobiles</span>
+            </div>
+
+            <div class="tagline">
+                Your Perfect Mobile Partner
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search mobile or brand..."
+            >
+
+            <button onclick="searchMobiles()">
+                Search
+            </button>
+
+        </div>
+
+        <!-- TOP LINKS -->
+        <div class="top-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html" class="cart-link">
+                🛒 Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="mo.html">Mobiles</a>
+
+        <a href="offers.html">Offers</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+
+        <h1>All Mobiles</h1>
+
+        <p>Choose your favourite smartphone</p>
+
+    </div>
+
+
+    <!-- NO SEARCH RESULT -->
+    <div id="noResult">
+        No mobile found!
+    </div>
+
+
+    <!-- PRODUCTS START -->
+    <div class="products">
+
+
+        <!-- APPLE 1 -->
+        <div class="product" data-name="iPhone 18pro Apple">
+
+            <div class="product-image-box">
+                <img src="in1.jpeg" alt="iPhone 18pro">
+            </div>
+
+            <div class="brand">Apple</div>
+
+            <h2>iPhone 18pro</h2>
+
+            <div class="price">₹1,64,900</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('apple1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iPhone 18pro','Apple',164900,'in1.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="apple1">
+
+                <b>Brand:</b> Apple<br>
+                <b>Display:</b> 6.9 inch<br>
+                <b>Camera:</b> 48 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Color:</b> Burgundy<br>
+                <b>Price:</b> ₹1,64,900
+
+            </div>
+
+        </div>
+
+
+        <!-- APPLE 2 -->
+        <div class="product" data-name="iPhone 16 Pro Apple">
+
+            <div class="product-image-box">
+                <img src="ip2.jpeg" alt="iPhone 16 Pro">
+            </div>
+
+            <div class="brand">Apple</div>
+
+            <h2>iPhone 16 Pro</h2>
+
+            <div class="price">₹1,09,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('apple2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iPhone 16 Pro','Apple',109999,'ip2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="apple2">
+
+                <b>Brand:</b> Apple<br>
+                <b>Display:</b> 6.3 inch<br>
+                <b>Camera:</b> 48 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Color:</b> Natural Titanium<br>
+                <b>Price:</b> ₹1,09,999
+
+            </div>
+
+        </div>
+
+
+        <!-- APPLE 3 -->
+        <div class="product" data-name="iPhone 17 Apple">
+
+            <div class="product-image-box">
+                <img src="ip3.jpeg" alt="iPhone 17">
+            </div>
+
+            <div class="brand">Apple</div>
+
+            <h2>iPhone 17</h2>
+
+            <div class="price">₹99,900</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('apple3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iPhone 17','Apple',99900,'ip3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="apple3">
+
+                <b>Brand:</b> Apple<br>
+                <b>Display:</b> 6.3 inch<br>
+                <b>Camera:</b> 48 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Color:</b> White<br>
+                <b>Price:</b> ₹99,900
+
+            </div>
+
+        </div>
+
+
+        <!-- SAMSUNG 1 -->
+        <div class="product" data-name="Galaxy S24 Samsung">
+
+            <div class="product-image-box">
+                <img src="in2.jpeg" alt="Samsung Galaxy S24 Ultra">
+            </div>
+
+            <div class="brand">Samsung</div>
+
+            <h2>Samsung Galaxy S24 Ultra</h2>
+
+            <div class="price">₹1,19,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('samsung1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Galaxy S24','Samsung',119999,'in2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="samsung1">
+
+                <b>Brand:</b> Samsung<br>
+                <b>Display:</b> 6.2 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Color:</b> Titanium Grey<br>
+                <b>Price:</b> ₹1,19,999
+
+            </div>
+
+        </div>
+
+
+        <!-- SAMSUNG 2 -->
+        <div class="product" data-name="Galaxy S25 Ultra Samsung">
+
+            <div class="product-image-box">
+                <img src="sam2.jpeg" alt="Samsung Galaxy S25 Ultra">
+            </div>
+
+            <div class="brand">Samsung</div>
+
+            <h2>Samsung Galaxy S25 Ultra</h2>
+
+            <div class="price">₹1,29,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('samsung2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Galaxy S25 Ultra','Samsung',129999,'sam2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="samsung2">
+
+                <b>Brand:</b> Samsung<br>
+                <b>Display:</b> 6.9 inch<br>
+                <b>Camera:</b> 200 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹1,29,999
+
+            </div>
+
+        </div>
+
+
+        <!-- SAMSUNG 3 -->
+        <div class="product" data-name="Galaxy A56 Samsung">
+
+            <div class="product-image-box">
+                <img src="sam3.jpeg" alt="Samsung Galaxy A56">
+            </div>
+
+            <div class="brand">Samsung</div>
+
+            <h2>Samsung Galaxy A56</h2>
+
+            <div class="price">₹41,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('samsung3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Galaxy A56','Samsung',41999,'sam3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="samsung3">
+
+                <b>Brand:</b> Samsung<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹41,999
+
+            </div>
+
+        </div>
+
+
+        <!-- ONEPLUS 1 -->
+        <div class="product" data-name="OnePlus 13 OnePlus">
+
+            <div class="product-image-box">
+                <img src="on1.jpeg" alt="OnePlus 13">
+            </div>
+
+            <div class="brand">OnePlus</div>
+
+            <h2>OnePlus 13</h2>
+
+            <div class="price">₹69,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('oneplus1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('OnePlus 13','OnePlus',69999,'on1.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="oneplus1">
+
+                <b>Brand:</b> OnePlus<br>
+                <b>Display:</b> 6.82 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹69,999
+
+            </div>
+
+        </div>
+
+
+        <!-- ONEPLUS 2 -->
+        <div class="product" data-name="OnePlus 13R OnePlus">
+
+            <div class="product-image-box">
+                <img src="on2.jpeg" alt="OnePlus 13R">
+            </div>
+
+            <div class="brand">OnePlus</div>
+
+            <h2>OnePlus 13R</h2>
+
+            <div class="price">₹42,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('oneplus2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('OnePlus 13R','OnePlus',42999,'on2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="oneplus2">
+
+                <b>Brand:</b> OnePlus<br>
+                <b>Display:</b> 6.78 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹42,999
+
+            </div>
+
+        </div>
+
+
+        <!-- ONEPLUS 3 -->
+        <div class="product" data-name="OnePlus Nord 5 OnePlus">
+
+            <div class="product-image-box">
+                <img src="on3.jpeg" alt="OnePlus Nord 5">
+            </div>
+
+            <div class="brand">OnePlus</div>
+
+            <h2>OnePlus Nord 5</h2>
+
+            <div class="price">₹31,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('oneplus3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('OnePlus Nord 5','OnePlus',31999,'on3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="oneplus3">
+
+                <b>Brand:</b> OnePlus<br>
+                <b>Display:</b> 6.83 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹31,999
+
+            </div>
+
+        </div>
+<!-- MOTOROLA 1 -->
+        <div class="product" data-name="Motorola Edge 60 Fusion Motorola">
+
+            <div class="product-image-box">
+                <img src="mt1.jpeg" alt="Motorola Edge 60 Fusion">
+            </div>
+
+            <div class="brand">Motorola</div>
+
+            <h2>Motorola Edge 60 Fusion</h2>
+
+            <div class="price">₹24,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('motorola1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Motorola Edge 60 Fusion','Motorola',24999,'mt1.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="motorola1">
+
+                <b>Brand:</b> Motorola<br>
+                <b>Display:</b> 6.67 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹24,999
+
+            </div>
+
+        </div>
+
+
+        <!-- MOTOROLA 2 -->
+        <div class="product" data-name="Motorola Edge 60 Pro Motorola">
+
+            <div class="product-image-box">
+                <img src="mt2.jpeg" alt="Motorola Edge 60 Pro">
+            </div>
+
+            <div class="brand">Motorola</div>
+
+            <h2>Motorola Edge 60 Pro</h2>
+
+            <div class="price">₹29,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('motorola2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Motorola Edge 60 Pro','Motorola',29999,'mt2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="motorola2">
+
+                <b>Brand:</b> Motorola<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹29,999
+
+            </div>
+
+        </div>
+
+
+        <!-- MOTOROLA 3 -->
+        <div class="product" data-name="Motorola G85 Motorola">
+
+            <div class="product-image-box">
+                <img src="mt3.jpeg" alt="Motorola G85">
+            </div>
+
+            <div class="brand">Motorola</div>
+
+            <h2>Motorola G85</h2>
+
+            <div class="price">₹17,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('motorola3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Motorola G85','Motorola',17999,'mt3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="motorola3">
+
+                <b>Brand:</b> Motorola<br>
+                <b>Display:</b> 6.67 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹17,999
+
+            </div>
+
+        </div>
+
+
+        <!-- IQOO 1 -->
+        <div class="product" data-name="iQOO Neo 10 iQOO">
+
+            <div class="product-image-box">
+                <img src="in4.jpeg" alt="iQOO Neo 10">
+            </div>
+
+            <div class="brand">iQOO</div>
+
+            <h2>iQOO Neo 10</h2>
+
+            <div class="price">₹36,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('iqoo1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iQOO Neo 10','iQOO',36999,'in4.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="iqoo1">
+
+                <b>Brand:</b> iQOO<br>
+                <b>Display:</b> 6.78 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹36,999
+
+            </div>
+
+        </div>
+
+
+        <!-- IQOO 2 -->
+        <div class="product" data-name="iQOO Neo 10R iQOO">
+
+            <div class="product-image-box">
+                <img src="iq2.jpeg" alt="iQOO Neo 10R">
+            </div>
+
+            <div class="brand">iQOO</div>
+
+            <h2>iQOO Neo 10R</h2>
+
+            <div class="price">₹30,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('iqoo2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iQOO Neo 10R','iQOO',30999,'iq2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="iqoo2">
+
+                <b>Brand:</b> iQOO<br>
+                <b>Display:</b> 6.78 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹30,999
+
+            </div>
+
+        </div>
+
+
+        <!-- IQOO 3 -->
+        <div class="product" data-name="iQOO Z10 iQOO">
+
+            <div class="product-image-box">
+                <img src="iq3.jpeg" alt="iQOO Z10">
+            </div>
+
+            <div class="brand">iQOO</div>
+
+            <h2>iQOO Z10</h2>
+
+            <div class="price">₹24,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('iqoo3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('iQOO Z10','iQOO',24999,'iq3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="iqoo3">
+
+                <b>Brand:</b> iQOO<br>
+                <b>Display:</b> 6.77 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹24,999
+
+            </div>
+
+        </div>
+
+
+        <!-- XIAOMI 1 -->
+        <div class="product" data-name="Xiaomi 15 Xiaomi">
+
+            <div class="product-image-box">
+                <img src="mi1.jpeg" alt="Xiaomi 15">
+            </div>
+
+            <div class="brand">Xiaomi</div>
+
+            <h2>Xiaomi 15</h2>
+
+            <div class="price">₹64,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('xiaomi1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Xiaomi 15','Xiaomi',64999,'mi1.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="xiaomi1">
+
+                <b>Brand:</b> Xiaomi<br>
+                <b>Display:</b> 6.36 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹64,999
+
+            </div>
+
+        </div>
+
+
+        <!-- XIAOMI 2 -->
+        <div class="product" data-name="Xiaomi 14 Xiaomi">
+
+            <div class="product-image-box">
+                <img src="mi2.jpeg" alt="Xiaomi 14">
+            </div>
+
+            <div class="brand">Xiaomi</div>
+
+            <h2>Xiaomi 14</h2>
+
+            <div class="price">₹49,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('xiaomi2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Xiaomi 14','Xiaomi',49999,'mi2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="xiaomi2">
+
+                <b>Brand:</b> Xiaomi<br>
+                <b>Display:</b> 6.36 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹49,999
+
+            </div>
+
+        </div>
+
+
+        <!-- REDMI 3 -->
+        <div class="product" data-name="Redmi Note 14 Pro Redmi Xiaomi">
+
+            <div class="product-image-box">
+                <img src="mi3.jpeg" alt="Redmi Note 14 Pro">
+            </div>
+
+            <div class="brand">Xiaomi</div>
+
+            <h2>Redmi Note 14 Pro</h2>
+
+            <div class="price">₹29,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('xiaomi3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Redmi Note 14 Pro','Xiaomi',29999,'mi3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="xiaomi3">
+
+                <b>Brand:</b> Xiaomi<br>
+                <b>Display:</b> 6.67 inch<br>
+                <b>Camera:</b> 200 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹29,999
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTHING 1 -->
+        <div class="product" data-name="Nothing Phone 3 Nothing">
+
+            <div class="product-image-box">
+                <img src="nt1.jpeg" alt="Nothing Phone (3)">
+            </div>
+
+            <div class="brand">Nothing</div>
+
+            <h2>Nothing Phone (3)</h2>
+
+            <div class="price">₹59,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('nothing1')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Nothing Phone (3)','Nothing',59999,'nt1.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="nothing1">
+
+                <b>Brand:</b> Nothing<br>
+                <b>Display:</b> 6.67 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 256 GB<br>
+                <b>Price:</b> ₹59,999
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTHING 2 -->
+        <div class="product" data-name="Nothing Phone 4a Nothing">
+
+            <div class="product-image-box">
+                <img src="nt2.jpeg" alt="Nothing Phone (4a)">
+            </div>
+
+            <div class="brand">Nothing</div>
+
+            <h2>Nothing Phone (4a)</h2>
+
+            <div class="price">₹25,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('nothing2')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Nothing Phone (2a)','Nothing',25999,'nt2.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="nothing2">
+
+                <b>Brand:</b> Nothing<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹25,999
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTHING 3 -->
+        <div class="product" data-name="Nothing Phone 2 Nothing">
+
+            <div class="product-image-box">
+                <img src="nt3.jpeg" alt="Nothing Phone (4b)">
+            </div>
+
+            <div class="brand">Nothing</div>
+
+            <h2>Nothing Phone (4b)</h2>
+
+            <div class="price">₹39,999</div>
+
+            <div class="buttons">
+
+                <button class="details-btn"
+                        onclick="showDetails('nothing3')">
+                    View Details
+                </button>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Nothing Phone (2)','Nothing',39999,'nt3.jpeg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+            <div class="details" id="nothing3">
+
+                <b>Brand:</b> Nothing<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50 MP<br>
+                <b>Storage:</b> 128 GB<br>
+                <b>Price:</b> ₹39,999
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- PRODUCTS END -->
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Best Mobiles</span> |
+            Your Perfect Mobile Partner
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* VIEW DETAILS */
+
+        function showDetails(id) {
+
+            const box = document.getElementById(id);
+
+            if (!box) {
+                return;
+            }
+
+            if (box.style.display === "block") {
+
+                box.style.display = "none";
+
+            } else {
+
+                box.style.display = "block";
+
+            }
+
+        }
+
+
+        /* ADD TO CART */
+
+        function addToCart(name, brand, price, image) {
+
+            let cart =
+                JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existing = cart.find(function(item) {
+
+                return item.name === name;
+
+            });
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: name,
+                    brand: brand,
+                    price: price,
+                    image: image,
+                    quantity: 1
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            alert(name + " added to cart!");
+
+        }
+
+
+        /* SEARCH MOBILES */
+
+        function searchMobiles() {
+
+            const input =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const products =
+                document.querySelectorAll(".product");
+
+
+            let found = 0;
+
+
+            products.forEach(function(product) {
+
+                const name =
+                    (product.dataset.name ||
+                     product.innerText)
+                    .toLowerCase();
+
+
+                const match =
+                    name.includes(input);
+
+
+                if (match) {
+
+                    product.style.display = "";
+
+                    found++;
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+
+            document.getElementById("noResult").style.display =
+                found === 0 ? "block" : "none";
+
+        }
+
+
+        /* ENTER KEY SEARCH */
+
+        document
+            .getElementById("searchInput")
+            .addEventListener("keydown", function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchMobiles();
+
+                }
+
+            });
+
+    </script>
+
+
+</body>
+</html>

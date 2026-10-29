@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Offers - Best Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #062653;
+            color: white;
+            padding: 18px 6% 0;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 52px;
+            border: 3px solid #ffd21c;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd21c;
+            border-radius: 50%;
+            bottom: 4px;
+            left: 14px;
+        }
+
+        .logo-text h2 {
+            color: white;
+            font-size: 23px;
+            margin-bottom: 3px;
+        }
+
+        .logo-text h2 span {
+            color: #ffd21c;
+        }
+
+        .logo-text p {
+            color: #cbd2df;
+            font-size: 10px;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .header-links a:hover {
+            color: #ffd21c;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            margin-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding: 14px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 42px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd21c;
+        }
+
+        nav a.active {
+            color: #ffd21c;
+        }
+
+        /* ================= TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            color: #17233c;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* ================= OFFER BANNER ================= */
+
+        .offer-banner {
+            width: 88%;
+            margin: 15px auto 30px;
+            background: #123f73;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .offer-banner h2 {
+            color: #ffd21c;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .offer-banner p {
+            font-size: 14px;
+            color: #e5e8ed;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            width: 88%;
+            margin: 0 auto 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ================= CORRECT IMAGE SIZE ================= */
+
+        .product-card img {
+            width: 140px;
+            height: 160px;
+            object-fit: contain;
+            margin: 0 auto 10px;
+            display: block;
+        }
+
+        .product-card h3 {
+            color: #17233c;
+            font-size: 17px;
+            margin-bottom: 9px;
+        }
+
+        .discount {
+            display: inline-block;
+            background: #ffd21c;
+            color: #17233c;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .old-price {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+
+        .price {
+            color: #17233c;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 5px 0 10px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .details-btn,
+        .cart-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 7px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .details-btn {
+            background: #17233c;
+            color: white;
+        }
+
+        .details-btn:hover {
+            background: #263858;
+        }
+
+        .cart-btn {
+            background: #ffd21c;
+            color: #17233c;
+        }
+
+        .cart-btn:hover {
+            background: #e6bd00;
+        }
+
+        /* ================= DETAILS ================= */
+
+        .details {
+            display: none;
+            background: #f5f7fa;
+            padding: 10px;
+            margin-top: 9px;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #062653;
+            color: white;
+            padding: 35px 6% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 25px;
+        }
+
+        .footer-box h3 {
+            color: #ffd21c;
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .footer-box p {
+            color: #d5d9e0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-box a {
+            display: block;
+            color: #d5d9e0;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .footer-box a:hover {
+            color: #ffd21c;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 18px;
+            text-align: center;
+            color: #cbd2df;
+            font-size: 13px;
+        }
+
+        .copyright span {
+            color: #ffd21c;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding-bottom: 10px;
+            }
+
+            .header-links a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-right: 20px;
+                margin-bottom: 8px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                width: 140px;
+                height: 160px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-top">
+
+            <div class="logo-area">
+
+                <div class="logo-icon"></div>
+
+                <div class="logo-text">
+                    <h2>Best <span>Mobiles</span></h2>
+                    <p>Your Perfect Mobile Partner</p>
+                </div>
+
+            </div>
+
+            <div class="header-links">
+
+                <a href="login.html">♙ Login</a>
+
+                <a href="cart.html">🛒 Cart</a>
+
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="mo.html">Mobiles</a>
+
+            <a href="offers.html" class="active">Offers</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= TITLE ================= -->
+
+    <section class="page-title">
+
+        <h1>🔥 Special Offers</h1>
+
+        <p>Grab amazing deals on popular smartphones</p>
+
+    </section>
+
+
+    <!-- ================= OFFER BANNER ================= -->
+
+    <section class="offer-banner">
+
+        <h2>🎉 Best Deals Available Now!</h2>
+
+        <p>
+            Limited-time offers on selected smartphones.
+            Add your favourite mobile to the cart.
+        </p>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <img src="ip2.jpeg" alt="iPhone 16 pro">
+
+            <h3>iPhone 16 pro</h3>
+
+            <span class="discount">10% OFF</span>
+
+            <p class="old-price">₹99,999</p>
+
+            <p class="price">₹89,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details1')">
+                View Details
+            </button>
+
+            <div class="details" id="details1">
+
+                <b>Brand:</b> Apple<br>
+                <b>Display:</b> 6.3 inch<br>
+                <b>Camera:</b> 48MP+48mp+12mp<br>
+                <b>Storage:</b> 128GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('iPhone 16 pro','Apple',89999,'ip2.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <img src="sam2.jpeg"
+                 alt="Samsung Galaxy S25">
+
+            <h3>Samsung Galaxy S25</h3>
+
+            <span class="discount">12% OFF</span>
+
+            <p class="old-price">₹1,29,999</p>
+
+            <p class="price">₹1,14,312</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details2')">
+                View Details
+            </button>
+
+            <div class="details" id="details2">
+
+                <b>Brand:</b> Samsung<br>
+                <b>Display:</b> 6.2 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('Samsung Galaxy S25','Samsung',74999,'sam2.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <img src="on1.jpeg"
+                 alt="OnePlus 13">
+
+            <h3>OnePlus 13</h3>
+
+            <span class="discount">15% OFF</span>
+
+            <p class="old-price">₹79,999</p>
+
+            <p class="price">₹69,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details3')">
+                View Details
+            </button>
+
+            <div class="details" id="details3">
+
+                <b>Brand:</b> OnePlus<br>
+                <b>Display:</b> 6.82 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('OnePlus 13','OnePlus',69999,'om1.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <img src="iq5.jpeg"
+                 alt="iQOO 13">
+
+            <h3>iQOO 13</h3>
+
+            <span class="discount">10% OFF</span>
+
+            <p class="old-price">₹59,999</p>
+
+            <p class="price">₹54,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details4')">
+                View Details
+            </button>
+
+            <div class="details" id="details4">
+
+                <b>Brand:</b> iQOO<br>
+                <b>Display:</b> 6.82 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('iQOO 13','iQOO',54999,'iq5.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <img src="mt1.jpeg"
+                 alt="Motorola Edge 60 Fusion">
+
+            <h3>Motorola Edge 60 Fusion</h3>
+
+            <span class="discount">12% OFF</span>
+
+            <p class="old-price">₹29,999</p>
+
+            <p class="price">₹24,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details5')">
+                View Details
+            </button>
+
+            <div class="details" id="details5">
+
+                <b>Brand:</b> Motorola<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('Motorola Edge 60 Fusion','Motorola',24999,'mt1.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <img src="mi4.jpeg"
+                 alt="Xiaomi 13 pro">
+
+            <h3>Xiaomi 13 pro</h3>
+
+            <span class="discount">15% OFF</span>
+
+            <p class="old-price">₹49,999</p>
+
+            <p class="price">₹42,499</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details6')">
+                View Details
+            </button>
+
+            <div class="details" id="details6">
+
+                <b>Brand:</b> Xiaomi<br>
+                <b>Display:</b> 6.73 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('Xiaomi 13 pro','Xiaomi',42499,'mi4.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product-card">
+
+            <img src="nt1.jpeg"
+                 alt="Nothing Phone 3">
+
+            <h3>Nothing Phone 3</h3>
+
+            <span class="discount">10% OFF</span>
+
+            <p class="old-price">₹84,999</p>
+
+            <p class="price">₹79,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details7')">
+                View Details
+            </button>
+
+            <div class="details" id="details7">
+
+                <b>Brand:</b> Nothing<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 256GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('Nothing Phone 3','Nothing',79999,'nt1.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product-card">
+
+            <img src="sam5.jpeg"
+                 alt="Samsung Galaxy M17">
+
+            <h3>Samsung Galaxy M17</h3>
+
+            <span class="discount">10% OFF</span>
+
+            <p class="old-price">₹21,999</p>
+
+            <p class="price">₹19,999</p>
+
+            <button class="details-btn"
+                    onclick="showDetails('details8')">
+                View Details
+            </button>
+
+            <div class="details" id="details8">
+
+                <b>Brand:</b> Samsung<br>
+                <b>Display:</b> 6.7 inch<br>
+                <b>Camera:</b> 50MP<br>
+                <b>Storage:</b> 128GB
+
+            </div>
+
+            <button class="cart-btn"
+                    onclick="addToCart('Samsung Galaxy M17','Samsung',19999,'sam5.jpeg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-box">
+
+                <h3>Best Mobiles</h3>
+
+                <p>
+                    Your Perfect Mobile Partner.
+                    Find the latest smartphones at great prices.
+                </p>
+
+            </div>
+
+
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Best Mobiles</span>. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* VIEW DETAILS */
+
+        function showDetails(id) {
+
+            let details = document.getElementById(id);
+
+            if (details.style.display === "block") {
+
+                details.style.display = "none";
+
+            } else {
+
+                details.style.display = "block";
+
+            }
+
+        }
+
+
+        /* ADD TO CART */
+
+        function addToCart(name, brand, price, image) {
+
+            let cart =
+                JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existing =
+                cart.find(item => item.name === name);
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: name,
+                    brand: brand,
+                    price: price,
+                    image: image,
+                    quantity: 1
+
+                });
+
+            }
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            alert(name + " added to cart!");
+
+        }
+
+    </script>
+
+</body>
+</html>
+```

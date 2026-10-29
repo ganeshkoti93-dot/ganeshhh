@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Best Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background: #17233c;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ffd21c;
+        }
+
+        .search {
+            flex: 1;
+            display: flex;
+            max-width: 650px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .search button {
+            background: #ffd21c;
+            border: none;
+            padding: 0 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            color: #17233c;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e5b900;
+        }
+
+
+        /* TITLE */
+
+        .title {
+            text-align: center;
+            padding: 35px 20px 20px;
+        }
+
+        .title h1 {
+            font-size: 30px;
+        }
+
+        .title p {
+            margin-top: 8px;
+            color: #666;
+        }
+
+
+        /* CHECKOUT */
+
+        .checkout-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto 50px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+
+        /* FORM */
+
+        .checkout-form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .checkout-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 90px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #17233c;
+        }
+
+
+        /* ORDER SUMMARY */
+
+        .order-summary {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+            height: fit-content;
+        }
+
+        .order-summary h2 {
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-item span:last-child {
+            font-weight: bold;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 20px;
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        /* PLACE ORDER */
+
+        .place-order {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 13px;
+
+            background: #ffd21c;
+            color: #17233c;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .place-order:hover {
+            background: #e5b900;
+        }
+
+
+        /* SUCCESS */
+
+        .success {
+            display: none;
+
+            width: 90%;
+            max-width: 700px;
+
+            margin: 50px auto;
+
+            background: white;
+
+            padding: 50px 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .success h1 {
+            margin-bottom: 15px;
+        }
+
+        .success p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .success a {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background: #ffd21c;
+            color: #17233c;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 50px;
+
+            background: #17233c;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+
+            .search {
+                order: 3;
+                flex-basis: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        BEST <span>MOBILES</span>
+    </div>
+
+
+    <div class="search">
+
+        <input
+            type="text"
+            placeholder="Search mobiles, brands and models"
+        >
+
+        <button>
+            Search
+        </button>
+
+    </div>
+
+
+    <a href="login.html">
+        Login
+    </a>
+
+
+    <a href="cart.html">
+        🛒 Cart
+    </a>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="mo.html">
+        Mobiles
+    </a>
+
+    <a href="offers.html">
+        Offers
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+
+<!-- TITLE -->
+
+<section class="title">
+
+    <h1>
+        Checkout
+    </h1>
+
+    <p>
+        Enter your delivery details
+    </p>
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<div class="checkout-container" id="checkoutContainer">
+
+
+    <!-- CUSTOMER FORM -->
+
+    <div class="checkout-form">
+
+        <h2>
+            Delivery Details
+        </h2>
+
+
+        <form onsubmit="placeOrder(event)">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter 10 digit mobile number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Address
+                </label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your complete address"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    City
+                </label>
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter your city"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Pincode
+                </label>
+
+                <input
+                    type="text"
+                    id="pincode"
+                    placeholder="Enter 6 digit pincode"
+                    pattern="[0-9]{6}"
+                    maxlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="place-order"
+            >
+                Place Order
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+
+    <!-- ORDER SUMMARY -->
+
+    <div class="order-summary">
+
+        <h2>
+            Order Summary
+        </h2>
+
+
+        <div id="orderItems">
+        </div>
+
+
+        <div class="total">
+
+            <span>
+                Total
+            </span>
+
+            <span>
+                ₹<span id="total">0</span>
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- SUCCESS MESSAGE -->
+
+<div class="success" id="success">
+
+    <h1>
+        🎉 Order Placed Successfully!
+    </h1>
+
+    <p>
+        Thank you for shopping with Best Mobiles.
+    </p>
+
+    <p>
+        Your order has been received successfully.
+    </p>
+
+    <a href="index.html">
+        Continue Shopping
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Best Mobiles. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   LOAD CART
+========================= */
+
+let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let total = 0;
+
+
+/* =========================
+   DISPLAY ORDER
+========================= */
+
+function displayOrder() {
+
+    const orderItems =
+        document.getElementById("orderItems");
+
+    const totalElement =
+        document.getElementById("total");
+
+
+    orderItems.innerHTML = "";
+
+    total = 0;
+
+
+    /* EMPTY CART */
+
+    if (cart.length === 0) {
+
+        orderItems.innerHTML = `
+            <p>
+                Your cart is empty.
+            </p>
+        `;
+
+        totalElement.innerText = "0";
+
+        return;
+
+    }
+
+
+    /* PRODUCTS */
+
+    cart.forEach(function(item) {
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        orderItems.innerHTML += `
+
+            <div class="order-item">
+
+                <span>
+                    ${item.name} × ${item.quantity}
+                </span>
+
+                <span>
+                    ₹${itemTotal.toLocaleString("en-IN")}
+                </span>
+
+            </div>
+
+        `;
+
+    });
+
+
+    totalElement.innerText =
+        total.toLocaleString("en-IN");
+
+}
+
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+function placeOrder(event) {
+
+    event.preventDefault();
+
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        window.location.href =
+            "mo.html";
+
+        return;
+
+    }
+
+
+    let name =
+        document.getElementById("name").value;
+
+
+    /* SUCCESS */
+
+    document.getElementById(
+        "checkoutContainer"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "success"
+    ).style.display = "block";
+
+
+    /* CLEAR CART */
+
+    localStorage.removeItem("cart");
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+displayOrder();
+
+
+</script>
+
+
+</body>
+</html>

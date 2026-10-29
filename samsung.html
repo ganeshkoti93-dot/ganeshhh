@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Samsung Mobiles - Best Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+        }
+
+        header {
+            background: #062653;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ffd21c;
+        }
+
+        .search {
+            flex: 1;
+            display: flex;
+            max-width: 600px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search button {
+            background: #ffd21c;
+            border: none;
+            padding: 0 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .header-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-link:hover {
+            color: #ffd21c;
+        }
+
+        nav {
+            background: white;
+            padding: 14px 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #17233c;
+            margin-right: 30px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e5b900;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 35px 20px 25px;
+        }
+
+        .page-title h1 {
+            font-size: 30px;
+        }
+
+        .page-title p {
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .products {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        /* PRODUCT IMAGE SIZE */
+
+        .product img {
+            width: 160px;
+            height: 180px;
+            object-fit: contain;
+            margin: 0 auto 12px;
+            display: block;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .brand {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: #e5b900;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 10px 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .details {
+            background: #17233c;
+            color: white;
+            border: none;
+        }
+
+        .cart-btn {
+            background: #ffd21c;
+            color: #17233c;
+            border: none;
+        }
+
+        .details-box {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            background: #f1f5fa;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .details-box strong {
+            color: #062653;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #062653;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                gap: 15px;
+            }
+
+            nav a {
+                margin-right: 15px;
+            }
+
+        }
+  
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        BEST <span>MOBILES</span>
+    </div>
+
+    <div class="search">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search mobiles, brands and models">
+
+        <button onclick="searchMobile()">Search</button>
+
+    </div>
+
+    <a href="login.html" class="header-link">Login</a>
+
+    <a href="cart.html" class="header-link">🛒 Cart</a>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="mo.html">Mobiles</a>
+
+    <a href="offers.html">Offers</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+
+<section class="page-title">
+
+    <h1>Samsung Mobiles</h1>
+
+    <p>Explore the latest Samsung smartphones</p>
+
+</section>
+
+
+<section class="products">
+
+
+    <!-- SAMSUNG GALAXY S25 -->
+
+    <div class="product">
+
+        <img
+            src="sam2.jpeg"
+            alt="Samsung Galaxy S25">
+
+        <h3>Samsung Galaxy S25</h3>
+
+        <p class="brand">Samsung</p>
+
+        <p class="rating">★ 4.8</p>
+
+        <p class="price">₹74,999</p>
+
+        <div class="buttons">
+        
+
+            <button
+                class="details"
+                onclick="showDetails('details1')">
+                View Details
+            </button>
+
+           <button
+    class="cart-btn"
+    onclick="addToCart(
+        'Samsung Galaxy S25',
+        'Samsung',
+        74999,
+        'sam2.jpeg'
+    )">
+    Add to Cart
+</button>
+
+        </div>
+
+        <div id="details1" class="details-box">
+
+            <strong>Display:</strong> 6.2 inch<br>
+            <strong>Processor:</strong> Snapdragon 8 Elite<br>
+            <strong>Camera:</strong> 50MP + 12MP + 10MP<br>
+            <strong>Storage:</strong> 256GB<br>
+            <strong>Battery:</strong> 4000mAh<br>
+            <strong>Price:</strong> ₹74,999
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMSUNG GALAXY S24 -->
+
+    <div class="product">
+
+        <img
+            src="in2.jpeg"
+            alt="Samsung Galaxy S24">
+
+        <h3>Samsung Galaxy S24</h3>
+
+        <p class="brand">Samsung</p>
+
+        <p class="rating">★ 4.7</p>
+
+        <p class="price">₹64,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details2')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart(
+                    'Samsung Galaxy S24',
+                    'Samsung',
+                    64999,
+                    'in2.jpeg'
+                )">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details2" class="details-box">
+
+            <strong>Display:</strong> 6.2 inch<br>
+            <strong>Processor:</strong> Exynos 2400<br>
+            <strong>Camera:</strong> 50MP + 12MP + 10MP<br>
+            <strong>Storage:</strong> 256GB<br>
+            <strong>Battery:</strong> 4000mAh<br>
+            <strong>Price:</strong> ₹64,999
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMSUNG GALAXY A56 -->
+
+    <div class="product">
+
+        <img
+            src="sam3.jpeg"
+            alt="Samsung Galaxy A56">
+
+        <h3>Samsung Galaxy A56</h3>
+
+        <p class="brand">Samsung</p>
+
+        <p class="rating">★ 4.6</p>
+
+        <p class="price">₹41,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details3')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart(
+                    'Samsung Galaxy A56',
+                    'Samsung',
+                    41999,
+                    'sam3.jpeg'
+                )">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details3" class="details-box">
+
+            <strong>Display:</strong> 6.6 inch<br>
+            <strong>Processor:</strong> Exynos 1480<br>
+            <strong>Camera:</strong> 50MP + 12MP + 5MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Battery:</strong> 5000mAh<br>
+            <strong>Price:</strong> ₹41,999
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMSUNG GALAXY A35 -->
+
+    <div class="product">
+
+        <img
+            src="sam4.jpeg"
+            alt="Samsung Galaxy A35">
+
+        <h3>Samsung Galaxy A35</h3>
+
+        <p class="brand">Samsung</p>
+
+        <p class="rating">★ 4.5</p>
+
+        <p class="price">₹30,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details4')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart(
+                    'Samsung Galaxy A35',
+                    'Samsung',
+                    30999,
+                    'sam4.jpeg'
+                )">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details4" class="details-box">
+
+            <strong>Display:</strong> 6.6 inch<br>
+            <strong>Processor:</strong> Exynos 1380<br>
+            <strong>Camera:</strong> 50MP + 8MP + 5MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Battery:</strong> 5000mAh<br>
+            <strong>Price:</strong> ₹30,999
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMSUNG GALAXY M17 -->
+
+    <div class="product">
+
+        <img
+            src="sam5.jpeg"
+            alt="Samsung Galaxy M17">
+
+        <h3>Samsung Galaxy M17</h3>
+
+        <p class="brand">Samsung</p>
+
+        <p class="rating">★ 4.3</p>
+
+        <p class="price">₹19,999</p>
+
+        <div class="buttons">
+
+            <button
+                class="details"
+                onclick="showDetails('details5')">
+                View Details
+            </button>
+
+            <button
+                class="cart-btn"
+                onclick="addToCart(
+                    'Samsung Galaxy M17',
+                    'Samsung',
+                    19999,
+                    'sam5.jpeg'
+                )">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div id="details5" class="details-box">
+
+            <strong>Display:</strong> 6.7 inch<br>
+            <strong>Processor:</strong> Octa-Core Processor<br>
+            <strong>Camera:</strong> 50MP + 5MP + 2MP<br>
+            <strong>Storage:</strong> 128GB<br>
+            <strong>Battery:</strong> 5000mAh<br>
+            <strong>Price:</strong> ₹19,999
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 Best Mobiles. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+function showDetails(id) {
+
+    let box = document.getElementById(id);
+
+    if (box.style.display === "block") {
+
+        box.style.display = "none";
+
+    } else {
+
+        box.style.display = "block";
+
+    }
+
+}
+
+
+function addToCart(name, brand, price, image) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+
+        return item.name === name;
+
+    });
+
+    if (existing) {
+    existing.quantity = (existing.quantity || 0) + 1;
+    existing.image = image;
+    existing.price = price;
+    existing.brand = brand;
+    } else {
+
+        cart.push({
+
+            name: name,
+            brand: brand,
+            price: price,
+            image: image,
+            quantity: 1
+
+        });
+
+    }
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert(name + " added to cart!");
+
+}
+
+
+function searchMobile() {
+
+    let search = document
+        .getElementById("searchInput")
+        .value
+        .trim();
+
+    if (search === "") {
+
+        alert("Please enter a mobile or brand name");
+
+        return;
+
+    }
+
+    window.location.href =
+        "mo.html?search=" +
+        encodeURIComponent(search);
+
+}
+
+</script>
+
+
+</body>
+</html>
