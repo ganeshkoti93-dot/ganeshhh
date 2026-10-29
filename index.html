@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BEST MOBILES</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #17233c;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #062653;
+            color: white;
+            padding: 15px 4%;
+        }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            min-width: 190px;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 48px;
+            border: 3px solid #ffd21c;
+            border-radius: 7px;
+            margin-right: 10px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .logo-icon::after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background: #ffd21c;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 4px;
+            left: 12px;
+        }
+
+        .logo-text h2 {
+            font-size: 21px;
+            color: white;
+        }
+
+        .logo-text h2 span {
+            color: #ffd21c;
+        }
+
+        .logo-text p {
+            font-size: 9px;
+            color: #d9e2ef;
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+            display: flex;
+            height: 38px;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .search-box input {
+            width: 100%;
+            min-width: 0;
+            border: none;
+            outline: none;
+            padding: 0 15px;
+            border-radius: 5px 0 0 5px;
+            font-size: 13px;
+        }
+
+        .search-box button {
+            width: 80px;
+            flex-shrink: 0;
+            border: none;
+            background: #ffd21c;
+            color: #062653;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .search-box button:hover {
+            background: #ffdf55;
+        }
+
+
+        /* =========================
+           LOGIN & CART
+        ========================= */
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-shrink: 0;
+        }
+
+        .login,
+        .cart {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .login:hover,
+        .cart:hover {
+            color: #ffd21c;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navigation {
+            margin-top: 15px;
+            border-top: 1px solid #1d4778;
+            padding-top: 12px;
+            display: flex;
+            gap: 55px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .navigation a:hover {
+            color: #ffd21c;
+        }
+
+        .navigation a:first-child {
+            color: #ffd21c;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           HERO BANNER
+           NO EXTERNAL IMAGE NEEDED
+        ========================= */
+
+        .hero {
+            margin: 12px auto;
+            width: 92%;
+            min-height: 350px;
+            background:
+                radial-gradient(circle at 82% 45%,
+                    rgba(255,210,28,0.18),
+                    transparent 24%),
+                linear-gradient(110deg,
+                    #063c80,
+                    #0871c9);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            right: 7%;
+            top: 35px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 50%;
+            right: 12%;
+            top: 80px;
+        }
+
+        .hero-content {
+            width: 52%;
+            padding: 45px;
+            z-index: 2;
+        }
+
+        .small-brand {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .small-brand span {
+            color: #ffd21c;
+        }
+
+        .hero-content h1 {
+            font-size: 39px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #e4edf8;
+            max-width: 450px;
+            margin-bottom: 25px;
+        }
+
+        .yellow-btn {
+            display: inline-block;
+            background: #ffd21c;
+            color: #062653;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .yellow-btn:hover {
+            background: white;
+        }
+
+
+        /* =========================
+           BUILT-IN HERO PHONE IMAGE
+        ========================= */
+
+        .hero-image {
+            width: 48%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone-visual {
+            width: 145px;
+            height: 265px;
+            background: linear-gradient(145deg, #101827, #263d5d);
+            border: 4px solid #d9e2ef;
+            border-radius: 25px;
+            position: relative;
+            transform: rotate(8deg);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+        }
+
+        .phone-visual::before {
+            content: "";
+            position: absolute;
+            width: 42px;
+            height: 10px;
+            background: #081321;
+            border-radius: 10px;
+            top: 9px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .phone-screen {
+            position: absolute;
+            left: 7px;
+            right: 7px;
+            top: 7px;
+            bottom: 7px;
+            border-radius: 19px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 70% 30%,
+                    #ffd21c,
+                    transparent 22%),
+                linear-gradient(145deg,
+                    #07346e,
+                    #0c8ad4 60%,
+                    #062653);
+        }
+
+        .phone-screen::after {
+            content: "BEST";
+            position: absolute;
+            bottom: 28px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           BRANDS
+        ========================= */
+
+        .brands-section {
+            background: white;
+            padding: 25px 4%;
+        }
+
+        .brands {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .brand {
+            height: 100px;
+            border: 1px solid #dce3eb;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            transition: 0.3s;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .brand:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-color: #ffd21c;
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .brand-logo img {
+            width: 65px;
+            height: 40px;
+            max-width: 65px;
+            max-height: 40px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: 11px;
+            color: #657080;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            padding: 35px 4%;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+            color: #062653;
+            font-size: 24px;
+        }
+
+        .view-all {
+            color: #0864b6;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #e0e5eb;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+        }
+
+        .product-image {
+            height: 210px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .product-image img {
+            width: 150px;
+            height: 175px;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 14px;
+            color: #17233c;
+            margin-bottom: 7px;
+        }
+
+        .brand-small {
+            color: #7a8492;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .rating {
+            color: #169447;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #062653;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product-btn {
+            display: block;
+            text-align: center;
+            background: #0864b6;
+            color: white;
+            padding: 9px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .product-btn:hover {
+            background: #062653;
+        }
+
+
+        /* =========================
+           BIG OFFER BANNER
+           NO EXTERNAL IMAGE NEEDED
+        ========================= */
+
+        .deal-banner {
+            width: 92%;
+            margin: 10px auto 35px;
+            min-height: 180px;
+            border-radius: 10px;
+            background:
+                radial-gradient(circle at 78% 45%,
+                    rgba(255,210,28,0.20),
+                    transparent 25%),
+                linear-gradient(100deg,
+                    #063b78,
+                    #0872c9);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .deal-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .deal-content h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .deal-content h2 span {
+            color: #ffd21c;
+        }
+
+        .deal-content p {
+            color: #e0ebf7;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+
+        /* BUILT-IN OFFER VISUAL */
+
+        .deal-image {
+            width: 45%;
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .offer-phone {
+            width: 85px;
+            height: 145px;
+            background: linear-gradient(145deg, #111827, #314b6c);
+            border: 3px solid #d9e2ef;
+            border-radius: 17px;
+            transform: rotate(12deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-phone::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 7px;
+            background: #081321;
+            border-radius: 8px;
+            top: 7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .offer-screen {
+            position: absolute;
+            top: 6px;
+            left: 5px;
+            right: 5px;
+            bottom: 6px;
+            border-radius: 12px;
+            background:
+                radial-gradient(circle at 70% 30%,
+                    #ffd21c,
+                    transparent 25%),
+                linear-gradient(145deg,
+                    #063c80,
+                    #0a8bd2);
+        }
+
+        .discount-circle {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            background: #ffd21c;
+            color: #062653;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: absolute;
+            right: 10%;
+            top: 25px;
+            z-index: 3;
+            transform: rotate(-8deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+        }
+
+        .discount-circle strong {
+            font-size: 25px;
+        }
+
+        .discount-circle span {
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           WHY CHOOSE
+        ========================= */
+
+        .why-section {
+            background: white;
+            padding: 35px 4%;
+        }
+
+        .why-section h2 {
+            color: #062653;
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 25px;
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .why-box {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #edf4fc;
+            color: #0864b6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto auto 12px;
+            font-size: 23px;
+        }
+
+        .why-box h3 {
+            color: #17233c;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .why-box p {
+            color: #7a8492;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #062653;
+            color: white;
+            padding: 35px 5% 15px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-logo {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo span {
+            color: #ffd21c;
+        }
+
+        .footer-text {
+            color: #c9d8e9;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            color: #ffd21c;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #d7e1ee;
+            text-decoration: none;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .footer-links a:hover {
+            color: #ffd21c;
+        }
+
+        .social {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social span {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #174579;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .copyright {
+            border-top: 1px solid #28507d;
+            margin-top: 25px;
+            padding-top: 15px;
+            text-align: center;
+            color: #aebfd3;
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .top-header {
+                flex-wrap: wrap;
+            }
+
+            .search-box {
+                order: 3;
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+
+            .brands {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content {
+                width: 55%;
+            }
+
+            .hero-image {
+                width: 45%;
+            }
+
+            .footer-container {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 25px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 13px 4%;
+            }
+
+            .top-header {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .logo {
+                min-width: auto;
+            }
+
+            .logo-text h2 {
+                font-size: 19px;
+            }
+
+            .header-actions {
+                gap: 12px;
+            }
+
+            .search-box {
+                height: 40px;
+            }
+
+            .navigation {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                flex-direction: column;
+                width: 94%;
+                min-height: auto;
+            }
+
+            .hero-content {
+                width: 100%;
+                text-align: center;
+                padding: 30px 20px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 230px;
+            }
+
+            .phone-visual {
+                width: 115px;
+                height: 210px;
+            }
+
+            .brands {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .deal-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+
+            .deal-content {
+                width: 100%;
+            }
+
+            .deal-image {
+                width: 100%;
+                height: 150px;
+            }
+
+            .discount-circle {
+                right: 18%;
+            }
+
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .navigation {
+                gap: 14px;
+            }
+
+            .hero-content h1 {
+                font-size: 26px;
+            }
+
+            .brands {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .deal-content h2 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="top-header">
+
+        <div class="logo">
+
+            <div class="logo-icon"></div>
+
+            <div class="logo-text">
+                <h2>Best <span>Mobiles</span></h2>
+                <p>Your Perfect Mobile Partner</p>
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search mobiles, brands and models">
+
+            <button onclick="searchMobiles()">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN & CART -->
+
+        <div class="header-actions">
+
+            <a href="login.html" class="login">
+                ♙ &nbsp; Login
+            </a>
+
+            <a href="cart.html" class="cart">
+                🛒 Cart
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="mo.html">
+            Mobiles
+        </a>
+
+        <a href="offers.html">
+            Offers
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO BANNER ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-brand">
+            Best <span>Mobiles</span>
+        </div>
+
+        <h1>
+            Your Next Smartphone<br>
+            Is Here!
+        </h1>
+
+        <p>
+            Explore the latest mobiles from top brands
+            with great offers and easy shopping.
+        </p>
+
+        <a href="mo.html" class="yellow-btn">
+            Shop Now &nbsp; →
+        </a>
+
+    </div>
+
+
+    <!-- BUILT-IN PHONE DESIGN -->
+
+    <div class="hero-image">
+
+        <div class="phone-visual">
+
+            <div class="phone-screen"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PHONE BRANDS ================= -->
+
+<section class="brands-section">
+
+    <div class="brands">
+
+
+        <!-- APPLE -->
+
+        <a href="iphone.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo1.jpeg"
+                    alt="Apple Logo">
+
+            </div>
+
+            <div class="brand-name">
+                Apple
+            </div>
+
+        </a>
+
+
+        <!-- SAMSUNG -->
+
+        <a href="samsung.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo2.jpeg"
+                    alt="Samsung Logo">
+
+            </div>
+
+            <div class="brand-name">
+                Samsung
+            </div>
+
+        </a>
+
+
+        <!-- XIAOMI -->
+
+        <a href="xiaomi.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo3.jpeg"
+                    alt="Xiaomi Logo">
+
+            </div>
+
+            <div class="brand-name">
+                Xiaomi
+            </div>
+
+        </a>
+
+
+        <!-- ONEPLUS -->
+
+        <a href="oneplus.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo4.jpeg"
+                    alt="OnePlus Logo">
+
+            </div>
+
+            <div class="brand-name">
+                OnePlus
+            </div>
+
+        </a>
+
+
+        <!-- MOTOROLA -->
+
+        <a href="motorola.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo5.jpeg"
+                    alt="Motorola Logo">
+
+            </div>
+
+            <div class="brand-name">
+                Motorola
+            </div>
+
+        </a>
+
+
+        <!-- IQOO -->
+
+        <a href="iqoo.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo6.jpeg"
+                    alt="iQOO Logo">
+
+            </div>
+
+            <div class="brand-name">
+                iQOO
+            </div>
+
+        </a>
+
+
+        <!-- NOTHING -->
+
+        <a href="nothing.html" class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="logo7.jpeg"
+                    alt="Nothing Logo">
+
+            </div>
+
+            <div class="brand-name">
+                Nothing
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= POPULAR MOBILES ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2>
+            Popular Mobiles
+        </h2>
+
+        <a href="mo.html" class="view-all">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- ================= IPHONE ================= -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="in1.jpeg"
+                    alt="iPhone 18 Pro">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    iPhone 18 Pro
+                </h3>
+
+                <div class="brand-small">
+                    Apple
+                </div>
+
+                <div class="rating">
+                    ★ 4.6 (12K)
+                </div>
+
+                <div class="price">
+                    ₹1,79,000
+                </div>
+
+                <a
+                    href="iphone.html#iphone16"
+                    class="product-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= SAMSUNG ================= -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="in2.jpeg"
+                    alt="Samsung Galaxy S24 Ultra">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Samsung Galaxy S24 Ultra
+                </h3>
+
+                <div class="brand-small">
+                    Samsung
+                </div>
+
+                <div class="rating">
+                    ★ 4.9 (8K)
+                </div>
+
+                <div class="price">
+                    ₹1,19,999
+                </div>
+
+                <a
+                    href="samsung.html#s25"
+                    class="product-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= ONEPLUS ================= -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="in3.jpeg"
+                    alt="OnePlus 15">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    OnePlus 15
+                </h3>
+
+                <div class="brand-small">
+                    OnePlus
+                </div>
+
+                <div class="rating">
+                    ★ 4.6 (6K)
+                </div>
+
+                <div class="price">
+                    ₹85,999
+                </div>
+
+                <a
+                    href="oneplus.html#oneplus13r"
+                    class="product-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= IQOO ================= -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="in4.jpeg"
+                    alt="iQOO Neo 10">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    iQOO Neo 10
+                </h3>
+
+                <div class="brand-small">
+                    iQOO
+                </div>
+
+                <div class="rating">
+                    ★ 4.3 (5K)
+                </div>
+
+                <div class="price">
+                    ₹45,999
+                </div>
+
+                <a
+                    href="iqoo.html#neo10"
+                    class="product-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BIG DEALS BANNER ================= -->
+
+<section class="deal-banner">
+
+
+    <div class="deal-content">
+
+        <h2>
+            Big Deals<br>
+            <span>Big Savings!</span>
+        </h2>
+
+        <p>
+            Up to 50% OFF on selected Mobiles
+        </p>
+
+        <a
+            href="offers.html"
+            class="yellow-btn">
+
+            Explore Offers &nbsp; →
+
+        </a>
+
+    </div>
+
+
+    <!-- BUILT-IN OFFER PHONE -->
+
+    <div class="deal-image">
+
+        <div class="offer-phone">
+
+            <div class="offer-screen"></div>
+
+        </div>
+
+
+        <div class="discount-circle">
+
+            <strong>
+                50%
+            </strong>
+
+            <span>
+                OFF
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WHY CHOOSE ================= -->
+
+<section class="why-section">
+
+    <h2>
+        Why Choose Best Mobiles?
+    </h2>
+
+
+    <div class="why-container">
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ✓
+            </div>
+
+            <h3>
+                100% Original
+            </h3>
+
+            <p>
+                Genuine Products
+            </p>
+
+        </div>
+
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ♡
+            </div>
+
+            <h3>
+                Best Prices
+            </h3>
+
+            <p>
+                Guaranteed
+            </p>
+
+        </div>
+
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ↩
+            </div>
+
+            <h3>
+                Easy Returns
+            </h3>
+
+            <p>
+                Within 7 Days
+            </p>
+
+        </div>
+
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                🔒
+            </div>
+
+            <h3>
+                Secure Payments
+            </h3>
+
+            <p>
+                100% Safe & Trusted
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div>
+
+            <div class="footer-logo">
+                Best <span>Mobiles</span>
+            </div>
+
+            <p class="footer-text">
+
+                Your Perfect Mobile Partner.<br>
+
+                Find the latest smartphones
+                at great prices.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <div class="footer-title">
+                Quick Links
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="mo.html">
+                    Mobiles
+                </a>
+
+                <a href="offers.html">
+                    Offers
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <div class="footer-title">
+                Stay Connected
+            </div>
+
+            <div class="social">
+
+                <span>
+                    f
+                </span>
+
+                <span>
+                    ●
+                </span>
+
+                <span>
+                    ◎
+                </span>
+
+                <span>
+                    X
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Best Mobiles.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= SEARCH JAVASCRIPT ================= -->
+
+<script>
+
+function searchMobiles() {
+
+    let search =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim();
+
+
+    if (search === "") {
+
+        alert(
+            "Please enter a mobile or brand name"
+        );
+
+        return;
+    }
+
+
+    let value =
+        search.toLowerCase();
+
+
+    if (value === "apple") {
+
+        window.location.href =
+            "iphone.html";
+
+    }
+
+    else if (value === "samsung") {
+
+        window.location.href =
+            "samsung.html";
+
+    }
+
+    else if (value === "xiaomi") {
+
+        window.location.href =
+            "xiaomi.html";
+
+    }
+
+    else if (value === "oneplus") {
+
+        window.location.href =
+            "oneplus.html";
+
+    }
+
+    else if (value === "motorola") {
+
+        window.location.href =
+            "motorola.html";
+
+    }
+
+    else if (
+        value === "iqoo" ||
+        value === "i qoo"
+    ) {
+
+        window.location.href =
+            "iqoo.html";
+
+    }
+
+    else if (value === "nothing") {
+
+        window.location.href =
+            "nothing.html";
+
+    }
+
+    else {
+
+        window.location.href =
+            "mo.html?search=" +
+            encodeURIComponent(search);
+
+    }
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            searchMobiles();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
